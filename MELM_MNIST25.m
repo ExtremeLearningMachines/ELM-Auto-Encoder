@@ -39,8 +39,8 @@ function [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy] = MELM_M
 
 
     %%%%%%%%%%% Load training dataset
-    P = loadMNISTImages('mnist/train-images.idx3-ubyte');
-    T = loadMNISTLabels('mnist/train-labels.idx1-ubyte');
+    P = loadMNISTImages('mnist/train-images-idx3-ubyte');
+    T = loadMNISTLabels('mnist/train-labels-idx1-ubyte');
     T = T';
 
 
@@ -57,7 +57,7 @@ function [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy] = MELM_M
     end 
 
     %%%%%%%%%%% Load testing dataset
-    TV.T = loadMNISTLabels('mnist/t10k-labels.idx1-ubyte');
+    TV.T = loadMNISTLabels('mnist/t10k-labels-idx1-ubyte');
     TV.T = TV.T';                                   %   Release raw testing data array
 
 
@@ -226,7 +226,7 @@ function [TrainingTime, TestingTime, TrainingAccuracy, TestingAccuracy] = MELM_M
     clear InputDataLayer;
     clear H;
     
-    TV.P = loadMNISTImages('mnist/t10k-images.idx3-ubyte');
+    TV.P = loadMNISTImages('mnist/t10k-images-idx3-ubyte');
     %%%%%%%%%%% Calculate the output of testing input
     test_time=tic;
     InputDataLayer = zscore(TV.P);
